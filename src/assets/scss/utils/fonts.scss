@@ -1,0 +1,8 @@
+// Fonts here
+
+@font-face {
+	font-family: "HelveticaNeueCyr-Black";
+	src: url('/assets/fonts/HelveticaNeue/HelveticaNeue-Black.woff');
+	src: url('/assets/fonts/HelveticaNeue/HelveticaNeue-Black.woff2') format('woff2')
+		 url('/assets/fonts/HelveticaNeue/HelveticaNeue-Black.woff')  format('woff')
+  }

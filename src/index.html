@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%= htmlWebpackPlugin.options.title || 'Webpack App' %></title>
+  <% for (var css in htmlWebpackPlugin.files.css) { %>
+    <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+  <% } %>    
+</head>
+<body>
+
+  <!-- main wrapper -->
+  <div class="wrapper">
+    <!-- #app wrapper for vue -->
+    <div id="app">
+
+      <header></header>
+
+      <!-- only content wrapper -->
+      <div class="content-wrapper">
+
+        <!--  expamle section -->
+        <section id="main">
+          <div class="container">
+            <h1>Webpack</h1>
+            <p>qwe</p>
+            <img src="/assets/img/original.jpg">
+            <!-- toggle expamle component -->
+            <button @click="showExampleComponent = !showExampleComponent">Toggle Vue Example Component</button>
+          </div>
+        </section>
+        <!-- expamle component -->
+        <example-component v-if="showExampleComponent"></example-component>
+
+      </div> <!-- end content wrapper -->
+
+    <footer></footer>
+
+    </div> <!-- end #app wrapper -->
+  </div> <!-- end main wrapper -->
+
+  <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+    <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>" rel="stylesheet"></script>
+  <% } %>  
+
+</body>
+</html>
